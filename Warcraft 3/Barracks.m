@@ -35,8 +35,6 @@
 
 
 -(BOOL) canTrainFootman {
-    self.food = 2;
-    self.gold = 135;
     if (self.food >= 2 && self.gold >= 135){
         return YES;
     } else {
@@ -46,8 +44,27 @@
 
 }
 
+-(Peasant*)trainPeasant{
+    
+    self.food -= 5;
+    self.gold -= 90;
+    
+    Peasant *peasant = [[Peasant alloc]initWithHP:35 AP:0];
+    return peasant;
+}
 
 
+-(BOOL)canTrainPeasant{
+
+    if (self.gold >=90 && self.food >= 5){
+        return YES;
+    
+    }else {
+    
+        return NO;
+    }
+    
+}
 
 
 
